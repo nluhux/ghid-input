@@ -4,7 +4,7 @@ DESTDIR ?=
 all:
 	${CC} ${CFLAGS} ghid-input-keyboard.c -o ghid-input-keyboard
 
-install: all
+install:
 	mkdir -pv ${DESTDIR}${PREFIX}/bin
 	cp -f ghid-input-keyboard ${DESTDIR}${PREFIX}/bin
 	chmod 0755 ${DESTDIR}${PREFIX}/bin/ghid-input-keyboard
