@@ -1,10 +1,8 @@
-COMPILER_CC ?= tcc
-COMPILER_CFLAGS ?= -Os
-PREFIX ?= /usr/local
+PREFIX ?= /usr
 DESTDIR ?=
 
 all:
-	${COMPILER_CC} ${COMPILER_CFLAGS} ghid-input-keyboard.c -o ghid-input-keyboard
+	${CC} ${CFLAGS} ghid-input-keyboard.c -o ghid-input-keyboard
 
 install: all
 	mkdir -pv ${DESTDIR}${PREFIX}/bin
