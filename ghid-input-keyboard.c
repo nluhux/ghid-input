@@ -187,7 +187,8 @@ int main(int argc, const char *argv[])
 			}
 		}
 		else {
-			break;
+			fprintf(stderr, "Illegal character detected, stop!\n");
+			return 7;
 		}
 	}
 
