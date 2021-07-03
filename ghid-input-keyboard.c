@@ -19,6 +19,7 @@ struct options {
 
 #define L_SHIFT 0x02
 
+// 字符码表
 static struct options kval[] = {
 	/*   char       code      shift? */
 	{.opt = 'a',.val = 0x04,.shift = 0},
