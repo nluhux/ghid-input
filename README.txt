@@ -6,6 +6,7 @@ ghid-input-keyboard 用法:
 
 ghid-input-keyboard /dev/hidgX < file
 pass show xxx/xxx/xxx | ghid-input-keyboard /dev/hidgX
+echo 'Hello World' | ghid-input-keyboard /dev/hidgX
 
 可以输入的字符:
 
