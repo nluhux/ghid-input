@@ -13,3 +13,12 @@ echo 'Hello World' | ghid-input-keyboard /dev/hidgX
 `1234567890-=qwertyuiop[]asdfghjkl;'\zxcvbnm,./
 ~!@#$%^&*()_+QWERTYUIOP{}ASDFGHJKL:"|ZXCVBNM<>?
 回车 空格
+
+
+
+
+
+
+他妈的,禁止搬到CSDN上卖,买了也不是我发的,别邮件来骚扰我.
+
+操你妈,CSDN
