@@ -11,6 +11,14 @@
 
 #define END 0
 
+// error return value
+#define ERR_OPT 1
+#define ERR_OPENFILE 2
+#define ERR_SELECT 3
+#define ERR_WRITE_KEY 4
+#define ERR_WRITE_STOP 5
+#define ERR_ILLEGAL_INPUT 6
+
 struct options {
 	const char    opt;
 	unsigned char val;
@@ -141,14 +149,14 @@ int main(int argc, const char *argv[])
 	if (argc < 2) {
 		fprintf(stderr, "Usage: %s devname\n",
 			argv[0]);
-		return 1;
+		return ERR_OPT;
 	}
 
 	filename = argv[1];
 
 	if ((fd = open(filename, O_RDWR, 0666)) == -1) {
 		perror(filename);
-		return 3;
+		return ERR_OPENFILE;
 	}
 
 	while (42) {
@@ -161,7 +169,7 @@ int main(int argc, const char *argv[])
 			continue;
 		if (retval < 0) {
 			perror("select()");
-			return 4;
+			return ERR_SELECT;
 		}
 		
 		memset(report, 0x0, sizeof(report));
@@ -179,17 +187,17 @@ int main(int argc, const char *argv[])
 			}
 			if (write(fd, report, to_send) != to_send) {
 				perror(filename);
-				return 5;
+				return ERR_WRITE_KEY;
 			}
 			memset(report, 0x0, sizeof(report));
 			if (write(fd, report, to_send) != to_send) {
 				perror(filename);
-				return 6;
+				return ERR_WRITE_STOP;
 			}
 		}
 		else {
 			fprintf(stderr, "Illegal character detected, stop!\n");
-			return 7;
+			return ERR_ILLEGAL_INPUT;
 		}
 	}
 
