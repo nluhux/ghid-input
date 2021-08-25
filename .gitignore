@@ -1,3 +1,4 @@
 *~
 *.out
-ghid-input-keyboard
+ghid-input-keyboard-visible-char
+.ccls-cache

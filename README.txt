@@ -2,11 +2,11 @@ ghid-input
 
 用于linux usb gadget hid的工具
 
-ghid-input-keyboard 用法:
+ghid-input-keyboard-visible-char 用法:
 
-ghid-input-keyboard /dev/hidgX < file
-pass show xxx/xxx/xxx | ghid-input-keyboard /dev/hidgX
-echo 'Hello World' | ghid-input-keyboard /dev/hidgX
+ghid-input-keyboard-visible-char /dev/hidgX < file
+pass show xxx/xxx/xxx | ghid-input-keyboard-visible-char /dev/hidgX
+echo 'Hello World' | ghid-input-keyboard-visible-char /dev/hidgX
 
 可以输入的字符:
 
